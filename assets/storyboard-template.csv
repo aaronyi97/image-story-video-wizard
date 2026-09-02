@@ -1,0 +1,2 @@
+shot_id,audio_start,audio_end,narration_excerpt,visual_intent,characters,text_card,reference_ids,prompt_id,asset_file,status
+S001,00:00.000,00:00.000,,,,,,P001,,未开始
