@@ -34,7 +34,17 @@
 
 如果你只需要一篇文案、一张图或普通剪辑，不需要调用这个 Skill。
 
-## 安装
+## 一句话安装
+
+把下面这句话完整发给 Codex：
+
+> 请使用 skill-installer 从 https://github.com/aaronyi97/image-story-video-wizard 安装 Skill。Skill 位于仓库根目录，安装名使用 image-story-video-wizard。安装完成后告诉我下一轮可以直接启动。
+
+Codex 安装 Skill 后会在下一轮对话加载它。然后直接发：
+
+> 使用 $image-story-video-wizard 开始一个新项目。我想做一期【选题】的图片联播视频，请主动带我往下做。
+
+## 终端安装
 
 Codex：
 

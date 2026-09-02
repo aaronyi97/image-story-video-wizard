@@ -1,6 +1,6 @@
 interface:
   display_name: "图片联播视频向导"
   short_description: "逐关主动引导完成图片故事视频的文案、配音、生图、剪辑和验收"
-  default_prompt: "Use $image-story-video-wizard to guide me step by step through making an image-story video."
+  default_prompt: "使用 $image-story-video-wizard 主动分步引导我完成一条图片联播视频，每次只让我提供当前必需的材料或确认。"
 policy:
   allow_implicit_invocation: true

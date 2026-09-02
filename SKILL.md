@@ -1,6 +1,6 @@
 ---
 name: image-story-video-wizard
-description: Guide a user one confirmation-gated step at a time through making an audio-first image-story, AI narration, slideshow, or illustrated story video with Codex or WorkBuddy. Use for AI 讲书、图片联播、有声故事、静态图叙事视频 and requests for an actively guided production wizard. Do not use when the user only wants a standalone script, a single image, or ordinary video editing.
+description: Use when a user wants step-by-step help making an audio-first image-story, AI narration, slideshow, illustrated story, AI 讲书, 图片联播, 有声故事, or 静态图叙事视频 with Codex or WorkBuddy; not for a standalone script, single image, or ordinary video editing.
 ---
 
 # Image Story Video Wizard

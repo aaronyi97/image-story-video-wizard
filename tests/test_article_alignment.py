@@ -11,6 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SKILL = ROOT / "SKILL.md"
+README = ROOT / "README.md"
+OPENAI_YAML = ROOT / "agents" / "openai.yaml"
 WORKFLOW = ROOT / "references" / "workflow.md"
 HOST_ROUTING = ROOT / "references" / "host-routing.md"
 STATE_SCRIPT = ROOT / "scripts" / "project_state.py"
@@ -69,6 +71,28 @@ class ArticleAlignmentTests(unittest.TestCase):
             self.assertIn(label, self.skill)
         self.assertIn("Never dump the whole workflow", self.skill)
         self.assertIn("Ask only what blocks the current stage", self.skill)
+
+    def test_skill_is_discoverable_after_install(self) -> None:
+        frontmatter = self.skill.split("---", 2)[1]
+        description = next(
+            line.removeprefix("description: ")
+            for line in frontmatter.splitlines()
+            if line.startswith("description: ")
+        )
+        self.assertTrue(description.startswith("Use when "), description)
+
+        openai_yaml = OPENAI_YAML.read_text(encoding="utf-8")
+        self.assertIn("$image-story-video-wizard", openai_yaml)
+        self.assertIn("主动分步引导", openai_yaml)
+
+    def test_readme_has_one_message_install_route(self) -> None:
+        readme = README.read_text(encoding="utf-8")
+        self.assertIn("一句话安装", readme)
+        self.assertIn("skill-installer", readme)
+        self.assertIn(
+            "https://github.com/aaronyi97/image-story-video-wizard", readme
+        )
+        self.assertIn("仓库根目录", readme)
 
     def test_every_stage_has_action_request_delivery_and_gate(self) -> None:
         for index, stage in enumerate(STAGES):
